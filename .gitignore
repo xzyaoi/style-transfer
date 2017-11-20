@@ -1,1 +1,4 @@
 pretrained/
+__pycache__/ 
+generated/ 
+models/ 

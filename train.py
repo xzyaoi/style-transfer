@@ -135,7 +135,8 @@ def main(FLAGS):
 
 
 if __name__ == '__main__':
-    tf.logging.set_verbosity(tf.logging.INFO)
-    args = parse_args()
-    FLAGS = utils.read_conf_file(args.conf)
-    main(FLAGS)
+    with tf.device('/gpu:0'):
+        tf.logging.set_verbosity(tf.logging.INFO)
+        args = parse_args()
+        FLAGS = utils.read_conf_file(args.conf)
+        main(FLAGS)
