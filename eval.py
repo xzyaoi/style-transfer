@@ -49,7 +49,7 @@ def main(_):
             generated = tf.squeeze(generated, [0])
 
             # Restore model variables.
-            saver = tf.train.Saver(tf.global_variables(), write_version=tf.train.SaverDef.V1)
+            saver = tf.train.Saver(tf.global_variables(), write_version=tf.train.SaverDef.V2)
             sess.run([tf.global_variables_initializer(), tf.local_variables_initializer()])
             # Use absolute path
             FLAGS.model_file = os.path.abspath(FLAGS.model_file)
